@@ -18,5 +18,5 @@ const interval = setInterval(() => {
 btn.addEventListener('click', () => {
   btn.disabled = true;
   btn.textContent = "Đang tải...";
-  window.location.href = "Army2TK_setup.exe";
+  window.location.href = "https://army2lau.net/taive/Army2TK_setup.exe";
 });
