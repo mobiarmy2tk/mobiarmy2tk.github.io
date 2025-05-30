@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.location.href = `https://ios.army2lau.net/iosinstall/`;
   });
 
-  for (let i = 1; i <= 7; i++) {
+  for (let i = 1; i <= 10; i++) {
     const btn = document.getElementById(`download-dp${i}`);
     if (btn) {
       btn.addEventListener('click', function () {
