@@ -18,6 +18,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   showPopup();
 
+  const buttons = document.querySelectorAll('.button-container .download-button');
+
+  let dpCount = 1;
+  buttons.forEach(btn => {
+    if (btn.id === 'download') return;
+
+    btn.textContent = `Tải Link Dự Phòng ${dpCount}`;
+    dpCount++;
+  });
+
   document.getElementById('download').addEventListener('click', function() {
     window.location.href = `https://ios.army2lau.net/iosinstall/`;
   });
