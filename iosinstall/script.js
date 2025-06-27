@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
       popup.style.visibility = 'hidden';
     }, 300);
   }
+
   showPopup();
 
   const buttons = document.querySelectorAll('.button-container .download-button');
@@ -23,12 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
   let dpCount = 1;
   buttons.forEach(btn => {
     if (btn.id === 'download') return;
-
     btn.textContent = `Tải Link Dự Phòng ${dpCount}`;
     dpCount++;
   });
 
-  document.getElementById('download').addEventListener('click', function() {
+  document.getElementById('download').addEventListener('click', function () {
     window.location.href = `https://ios.army2lau.net/iosinstall/`;
   });
 
@@ -39,5 +39,29 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = `https://ios.army2lau.net/iosinstall/dp${i}.php`;
       });
     }
+  }
+
+  const playBtn = document.getElementById("playBtn");
+  const closeBtn = document.getElementById("closeBtn");
+  const videoPopup = document.getElementById("videoPopup");
+  const ytplayer = document.getElementById("ytplayer");
+
+  if (playBtn && closeBtn && videoPopup && ytplayer) {
+    playBtn.addEventListener("click", () => {
+      ytplayer.src = "https://www.youtube.com/embed/u4dY9Ieejio?autoplay=1";
+      videoPopup.style.display = "flex";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      ytplayer.src = "";
+      videoPopup.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+      if (event.target === videoPopup) {
+        ytplayer.src = "";
+        videoPopup.style.display = "none";
+      }
+    });
   }
 });
