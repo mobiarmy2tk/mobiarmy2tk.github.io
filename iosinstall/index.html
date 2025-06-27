@@ -147,21 +147,23 @@
         display: inline-block;
         padding: 12px 28px;
         margin: 10px;
-        background: linear-gradient(90deg, #4CAF50, #3E9E45);
+        background: linear-gradient(90deg, #009DE0, #0086C0);
+        /* màu chủ đề + đậm hơn */
         color: #ffffff;
         text-decoration: none;
         border-radius: 8px;
         font-size: 15px;
         font-weight: 500;
         transition: background 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 4px 10px rgba(76, 175, 80, 0.1);
+        box-shadow: 0 4px 10px rgba(0, 157, 224, 0.2);
         cursor: pointer;
         border: none;
       }
 
       .download-button:hover {
-        background: linear-gradient(90deg, #3E9E45, #358C3D);
-        box-shadow: 0 5px 14px rgba(76, 175, 80, 0.45);
+        background: linear-gradient(90deg, #0086C0, #006FA5);
+        /* chuyển sang đậm hơn nữa khi hover */
+        box-shadow: 0 5px 14px rgba(0, 157, 224, 0.5);
       }
 
       #playBtn {
@@ -305,7 +307,7 @@
         <span class="h2-note blink-underline" style="color: red;">(Không Bỏ Qua Bước Này)</span>
       </h2>
       <p>
-        <strong>Cách cài:</strong> Tải hồ sơ → Mở <span style="color: green;">Cài đặt</span> → <span style="color: green;">Đã tải về hồ sơ</span> → <span style="color: green;">Cài đặt</span>
+        <strong>Cách cài:</strong> Tải hồ sơ → Mở <span style="color: #009DE0;">Cài đặt</span> → <span style="color: #009DE0;">Đã tải về hồ sơ</span> → <span style="color: #009DE0;">Cài đặt</span>
         <br /> (Hoặc: Cài đặt → Cài đặt chung → Quản lý VPN & thiết bị → <strong>KhoinDNS</strong> → Cài đặt)
       </p>
       <p style="color: red;">
@@ -316,7 +318,7 @@
     <div class="steps">
       <h2>Bước 2: Cài Đặt Ứng Dụng</h2>
       <p>Chọn một trong các link bên dưới ⬇️ <br />
-        <span class="blink-underline" style="color: red;">Nếu không tải được</span>, hãy kiên nhẫn và <span class="blink-underline" style="color: green;">thử tải link khác</span>
+        <span class="blink-underline" style="color: red;">Nếu không tải được</span>, hãy kiên nhẫn và <span class="blink-underline" style="color: #009DE0;">thử tải link khác</span>
       </p>
       <p>✅ <span style="color: red;">
           <b>Sau khi cài đặt xong, tiếp tục chuyển sang Bước 3</b>
@@ -353,7 +355,7 @@
     </div>
     <div class="steps">
       <h2>Bước 3: Xác Minh Ứng dụng</h2>
-      <p>Sau khi cài đặt xong, mở <span style="color: green;">Cài đặt</span> → <span style="color: green;">Cài đặt chung</span> → <span style="color: green;">Quản lý VPN & thiết bị</span> để xác minh ứng dụng. </p>
+      <p>Sau khi cài đặt xong, mở <span style="color: #009DE0;">Cài đặt</span> → <span style="color: #009DE0;">Cài đặt chung</span> → <span style="color: #009DE0;">Quản lý VPN & thiết bị</span> để xác minh ứng dụng. </p>
       <img src="xacminh.webp" alt="Hướng dẫn xác minh ứng dụng" style="max-width: 100%; border-radius: 8px; margin-top: 15px;">
     </div>
     <div id="custom-popup" style="visibility:hidden; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:9999; display:flex; justify-content:center; align-items:center; opacity:0; transform:scale(0.8); transition:opacity 0.3s ease, transform 0.3s ease;">
@@ -363,8 +365,8 @@
             <span style="color: red;">Bước 1: Cài đặt hồ sơ DNS</span>
           </strong> trước khi tiếp tục. </p>
         <p style="color: red;">( <strong>KHÔNG</strong> Cài Đặt Ứng Dụng Khi Chưa Hoàn Thành <strong>Cài Đặt DNS</strong>) </p>
-        <p style="color: green;">Điều này là bắt buộc để ứng dụng có thể hoạt động lâu dài.</p>
-        <button onclick="closePopup()" style="margin-top:15px; padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:5px; font-size:16px;">Đã hiểu</button>
+        <p style="color: #009DE0;">Điều này là bắt buộc để ứng dụng có thể hoạt động lâu dài.</p>
+        <button onclick="closePopup()" style="margin-top:15px; padding:10px 20px; background-color:#009DE0; color:white; border:none; border-radius:5px; font-size:16px;">Đã hiểu</button>
       </div>
     </div>
   </body>
