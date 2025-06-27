@@ -35,6 +35,51 @@
         border-radius: 2px;
       }
 
+      .warning-bar {
+        background: #ff4d4d;
+        color: #fff;
+        text-align: center;
+        padding: 3px 0;
+        width: 100%;
+        font-size: 13px;
+        font-weight: 500;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .warning-bar span {
+        display: inline-block;
+        white-space: nowrap;
+        padding-left: 100%;
+        animation: scrollText 12s linear infinite;
+      }
+
+      @keyframes scrollText {
+        0% {
+          transform: translateX(0%);
+        }
+
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      @keyframes blink {
+
+        0%,
+        100% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0.6;
+        }
+      }
+
       .shiny-text {
         font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Arial, sans-serif;
         font-weight: 600;
@@ -160,6 +205,9 @@
     </style>
   </head>
   <body>
+    <div class="warning-bar">
+      <span>🔁 Link sẽ được cập nhật liên tục. Nếu lỗi xảy ra, hãy quay lại trang này để tải lại.</span>
+    </div>
     <h1>
       <span style="color: red;">3 Bước</span> Cài Đặt <span style="color: green;">Army 2 TK</span> Trên <span class="shiny-text">iPhone</span>
     </h1>
