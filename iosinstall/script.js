@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (playBtn && closeBtn && videoPopup && ytplayer) {
     playBtn.addEventListener("click", () => {
-      ytplayer.src = "https://www.youtube.com/embed/u4dY9Ieejio?autoplay=1&mute=1";
+      ytplayer.src = "https://www.youtube.com/embed/MCJ8e-Sr6fA?autoplay=1&mute=1";
       videoPopup.style.display = "flex";
     });
 
