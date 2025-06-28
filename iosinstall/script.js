@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (playBtn && closeBtn && videoPopup && ytplayer) {
     playBtn.addEventListener("click", () => {
-      ytplayer.src = "https://drive.google.com/file/d/1QAELz99fYzuDCiK27t5Lg1h1cnk1Uof9/preview?autoplay=1";
+      ytplayer.src = "https://streamable.com/e/s3s870?autoplay=1";
       videoPopup.style.display = "flex";
     });
 
