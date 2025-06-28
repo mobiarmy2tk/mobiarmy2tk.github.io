@@ -48,9 +48,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (playBtn && closeBtn && videoPopup && ytplayer) {
     playBtn.addEventListener("click", () => {
-      ytplayer.src = "https://www.youtube.com/embed/MCJ8e-Sr6fA?autoplay=1&mute=1";
+      ytplayer.src = "https://player.vimeo.com/video/1097113838?h=46fba9724f&autoplay=1";
       videoPopup.style.display = "flex";
     });
+
 
     closeBtn.addEventListener("click", () => {
       ytplayer.src = "";
