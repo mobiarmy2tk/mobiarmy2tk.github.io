@@ -20,13 +20,31 @@ document.addEventListener('DOMContentLoaded', function () {
   showPopup();
 
   const buttons = document.querySelectorAll('.button-container .download-button');
+  const showMoreText = document.getElementById('showMoreText');
+  const maxVisible = 6;
 
   let dpCount = 1;
   buttons.forEach(btn => {
-    if (btn.id === 'download') return;
-    btn.textContent = `Tải Link Dự Phòng ${dpCount}`;
-    dpCount++;
+    if (btn.id !== 'download') {
+      btn.textContent = `Tải Link Dự Phòng ${dpCount}`;
+      dpCount++;
+    }
   });
+
+  buttons.forEach((btn, index) => {
+    if (index >= maxVisible) {
+      btn.style.display = 'none';
+    }
+  });
+
+  if (buttons.length > maxVisible) {
+    showMoreText.style.display = 'inline-block';
+  }
+
+  window.showMoreLinks = function () {
+    buttons.forEach(btn => btn.style.display = 'inline-block');
+    showMoreText.style.display = 'none';
+  }
 
   document.getElementById('download').addEventListener('click', function () {
     window.location.href = `https://ios.army2lau.net/iosinstall/`;
@@ -51,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
       ytplayer.src = "https://streamable.com/e/s3s870?autoplay=1";
       videoPopup.style.display = "flex";
     });
-
 
     closeBtn.addEventListener("click", () => {
       ytplayer.src = "";
