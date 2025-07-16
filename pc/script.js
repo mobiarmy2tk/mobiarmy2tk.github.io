@@ -18,5 +18,5 @@ const interval = setInterval(() => {
 btn.addEventListener('click', () => {
   btn.disabled = true;
   btn.textContent = "Đang tải...";
-  window.location.href = "https://pixeldrain.com/api/file/cwxBBvXQ?download";
+  window.location.href = "https://store2.gofile.io/download/web/aa5c6ddf-23d9-4ccb-9989-5c5e19ee77d4/Army2TK_setup.exe";
 });
