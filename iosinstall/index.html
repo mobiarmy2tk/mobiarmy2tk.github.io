@@ -1,406 +1,410 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <script src="script.js?v=1.0.5" defer></script>
-    <title>Cài Đặt Army 2 TK Trên iPhone</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 30px 16px;
-        margin: 0;
-        background: linear-gradient(135deg, #f5f7fa, #e6eff5);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-      }
 
-      h1 {
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex, nofollow">
+	<link rel="icon" type="image/png" href="favicon.png">
+	<script src="script.js?v=1.0.5" defer></script>
+	<title>Cài Đặt Army 2 TK Trên iPhone</title>
+	<style>
+	body {
+		font-family: Arial, sans-serif;
+		text-align: center;
+		padding: 30px 16px;
+		margin: 0;
+		background: linear-gradient(135deg, #f5f7fa, #e6eff5);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+	}
+	
+	h1 {
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+	
+	.section-divider {
+		width: 100%;
+		max-width: 700px;
+		height: 2px;
+		margin: 10px auto 30px auto;
+		background: linear-gradient(to right, transparent, #ccc, transparent);
+		border-radius: 2px;
+	}
+	
+	.warning-bar {
+		background: #ff4d4d;
+		color: #fff;
+		text-align: center;
+		padding: 3px 0;
+		width: 100%;
+		font-size: 13px;
+		font-weight: 500;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		overflow: hidden;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	}
+	
+	.warning-bar span {
+		display: inline-block;
+		white-space: nowrap;
+		padding-left: 100%;
+		animation: scrollText 12s linear infinite;
+	}
+	
+	@keyframes scrollText {
+		0% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(-100%);
+		}
+	}
+	
+	@keyframes blink {
+		0%,
+		100% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0.6;
+		}
+	}
+	
+	.shiny-text {
+		font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Arial, sans-serif;
+		font-weight: 600;
+		font-size: inherit;
+		background: linear-gradient(120deg, #1D1D1F 0%, #4f4f4f 30%, #ffffff 45%, #4f4f4f 60%, #1D1D1F 100%);
+		background-size: 200% auto;
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+		-webkit-text-fill-color: transparent;
+		animation: shimmer 2s infinite linear;
+		letter-spacing: -0.02em;
+	}
+	
+	@keyframes shimmer {
+		0% {
+			background-position: -100% 0;
+		}
+		100% {
+			background-position: 100% 0;
+		}
+	}
+	
+	p {
+		font-size: 16px;
+		color: #333;
+		margin-bottom: 20px;
+	}
+	
+	.h2-note {
+		font-size: 0.7em;
+		font-weight: normal;
+		display: inline-block;
+		margin-top: 4px;
+	}
+	
+	.blink-underline {
+		text-decoration: underline;
+		animation: blinkUnderline 1s infinite;
+	}
+	
+	@keyframes blinkUnderline {
+		0%,
+		100% {
+			text-decoration-color: transparent;
+		}
+		50% {
+			text-decoration-color: currentColor;
+		}
+	}
+	
+	.button-container {
+		margin-top: 30bpx;
+	}
+	
+	.download-button {
+		display: inline-block;
+		padding: 12px 28px;
+		margin: 10px;
+		background: linear-gradient(90deg, #009DE0, #0086C0);
+		color: #ffffff;
+		text-decoration: none;
+		border-radius: 8px;
+		font-size: 15px;
+		font-weight: 500;
+		transition: background 0.3s ease, box-shadow 0.3s ease;
+		box-shadow: 0 4px 10px rgba(0, 157, 224, 0.2);
+		cursor: pointer;
+		border: none;
+	}
+	
+	.download-button:hover {
+		background: linear-gradient(90deg, #0086C0, #006FA5);
+		box-shadow: 0 5px 14px rgba(0, 157, 224, 0.5);
+	}
+	
+	#playBtn {
+		position: relative;
+		border: 2px solid #00c6ff;
+		animation: neon 1.2s ease-in-out infinite alternate;
+		box-shadow: 0 0 10px rgba(0, 198, 255, 0.6);
+	}
+	
+	@keyframes neon {
+		0% {
+			box-shadow: 0 0 6px #00c6ff, 0 0 15px #00c6ff;
+		}
+		100% {
+			box-shadow: 0 0 12px #00eaff, 0 0 25px #00eaff;
+		}
+	}
+	
+	#playBtn::before,
+	#playBtn::after {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 22px;
+		pointer-events: none;
+	}
+	
+	#playBtn::before {
+		content: "👉";
+		left: -32px;
+		animation: leftHandBounce 0.9s infinite ease-in-out;
+	}
+	
+	@keyframes leftHandBounce {
+		0% {
+			transform: translateY(-50%) translateX(0) scale(1);
+		}
+		50% {
+			transform: translateY(-50%) translateX(-4px) scale(1.15);
+		}
+		100% {
+			transform: translateY(-50%) translateX(0) scale(1);
+		}
+	}
+	
+	#playBtn::after {
+		content: "👈";
+		right: -32px;
+		animation: rightHandPush 1s infinite ease-in-out;
+	}
+	
+	@keyframes rightHandPush {
+		0% {
+			transform: translateY(-50%) translateX(0) scale(1);
+		}
+		50% {
+			transform: translateY(-50%) translateX(6px) scale(1.15);
+		}
+		100% {
+			transform: translateY(-50%) translateX(0) scale(1);
+		}
+	}
+	
+	#videoPopup {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.6);
+		justify-content: center;
+		align-items: center;
+		z-index: 1000;
+		padding: 16px;
+		box-sizing: border-box;
+	}
+	
+	.video-container {
+		background: white;
+		border-radius: 10px;
+		overflow: hidden;
+		width: 100%;
+		max-width: 560px;
+		position: relative;
+	}
+	
+	.iframe-wrapper {
+		position: relative;
+		width: 100%;
+		padding-top: 177.78%;
+		height: 0;
+		overflow: hidden;
+	}
+	
+	.iframe-wrapper iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+	
+	#closeBtn {
+		position: absolute;
+		top: 1px;
+		right: 1px;
+		background: red;
+		color: white;
+		width: 24px;
+		height: 24px;
+		font-size: 16px;
+		font-weight: bold;
+		border-radius: 50%;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+		z-index: 10;
+	}
+	
+	@media (max-width: 480px) {
+		.video-container {
+			max-width: 100%;
+			border-radius: 6px;
+		}
+		#closeBtn {
+			width: 22px;
+			height: 22px;
+			font-size: 14px;
+		}
+	}
+	
+	.steps {
+		text-align: center;
+		max-width: 600px;
+		margin: 0 auto 30px auto;
+		background-color: #fff;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+	
+	.steps h2 {
+		color: #333;
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+	
+	.steps ol {
+		padding-left: 20px;
+	}
+	
+	@media (max-width: 600px) {
+		.download-button {
+			padding: 12px 20px;
+			font-size: 16px;
+		}
+		h1 {
+			font-size: 20px;
+		}
+		p {
+			font-size: 14px;
+		}
+		.steps h2 {
+			font-size: 18px;
+		}
+	}
+	</style>
+</head>
 
-      .section-divider {
-        width: 100%;
-        max-width: 700px;
-        height: 2px;
-        margin: 10px auto 30px auto;
-        background: linear-gradient(to right, transparent, #ccc, transparent);
-        border-radius: 2px;
-      }
-
-      .warning-bar {
-        background: #ff4d4d;
-        color: #fff;
-        text-align: center;
-        padding: 3px 0;
-        width: 100%;
-        font-size: 13px;
-        font-weight: 500;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        overflow: hidden;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      .warning-bar span {
-        display: inline-block;
-        white-space: nowrap;
-        padding-left: 100%;
-        animation: scrollText 12s linear infinite;
-      }
-
-      @keyframes scrollText {
-        0% {
-          transform: translateX(0%);
-        }
-
-        100% {
-          transform: translateX(-100%);
-        }
-      }
-
-      @keyframes blink {
-
-        0%,
-        100% {
-          opacity: 1;
-        }
-
-        50% {
-          opacity: 0.6;
-        }
-      }
-
-      .shiny-text {
-        font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Arial, sans-serif;
-        font-weight: 600;
-        font-size: inherit;
-        background: linear-gradient(120deg,
-            #1D1D1F 0%,
-            #4f4f4f 30%,
-            #ffffff 45%,
-            #4f4f4f 60%,
-            #1D1D1F 100%);
-        background-size: 200% auto;
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        -webkit-text-fill-color: transparent;
-        animation: shimmer 2s infinite linear;
-        letter-spacing: -0.02em;
-      }
-
-      @keyframes shimmer {
-        0% {
-          background-position: -100% 0;
-        }
-
-        100% {
-          background-position: 100% 0;
-        }
-      }
-
-      p {
-        font-size: 16px;
-        color: #333;
-        margin-bottom: 20px;
-      }
-
-      .h2-note {
-        font-size: 0.7em;
-        font-weight: normal;
-        display: inline-block;
-        margin-top: 4px;
-      }
-
-      .blink-underline {
-        text-decoration: underline;
-        animation: blinkUnderline 1s infinite;
-      }
-
-      @keyframes blinkUnderline {
-
-        0%,
-        100% {
-          text-decoration-color: transparent;
-        }
-
-        50% {
-          text-decoration-color: currentColor;
-        }
-      }
-
-      .button-container {
-        margin-top: 30bpx;
-      }
-
-      .download-button {
-        display: inline-block;
-        padding: 12px 28px;
-        margin: 10px;
-        background: linear-gradient(90deg, #009DE0, #0086C0);
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 8px;
-        font-size: 15px;
-        font-weight: 500;
-        transition: background 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0, 157, 224, 0.2);
-        cursor: pointer;
-        border: none;
-      }
-
-      .download-button:hover {
-        background: linear-gradient(90deg, #0086C0, #006FA5);
-        box-shadow: 0 5px 14px rgba(0, 157, 224, 0.5);
-      }
-
-      #playBtn {
-  position: relative;
-  z-index: 10;
-  background: linear-gradient(90deg, #00aaff, #007acc);
-  color: white;
-  border-radius: 30px;
-  padding: 10px 22px;
-  font-size: 14px;
-  font-weight: bold;
-  border: none;
-  animation: pulseGlow 1.4s infinite ease-in-out;
-  box-shadow: 0 0 0px rgba(0, 170, 255, 0.6);
-  transform: translateY(0);
-  transition: transform 0.2s ease;
-}
-
-#playBtn:hover {
-  transform: scale(1.08);
-  cursor: pointer;
-}
-
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 0px rgba(0, 170, 255, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 18px rgba(0, 170, 255, 0.9);
-  }
-  100% {
-    box-shadow: 0 0 0px rgba(0, 170, 255, 0.5);
-  }
-}
-
-      #videoPopup {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        padding: 16px;
-        box-sizing: border-box;
-      }
-
-      .video-container {
-        background: white;
-        border-radius: 10px;
-        overflow: hidden;
-        width: 100%;
-        max-width: 560px;
-        position: relative;
-      }
-
-      .iframe-wrapper {
-        position: relative;
-        width: 100%;
-        padding-top: 177.78%;
-        height: 0;
-        overflow: hidden;
-      }
-
-      .iframe-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
-      #closeBtn {
-        position: absolute;
-        top: 1px;
-        right: 1px;
-        background: red;
-        color: white;
-        width: 24px;
-        height: 24px;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        z-index: 10;
-      }
-
-      @media (max-width: 480px) {
-        .video-container {
-          max-width: 100%;
-          border-radius: 6px;
-        }
-
-        #closeBtn {
-          width: 22px;
-          height: 22px;
-          font-size: 14px;
-        }
-      }
-
-      .steps {
-        text-align: center;
-        max-width: 600px;
-        margin: 0 auto 30px auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .steps h2 {
-        color: #333;
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-
-      .steps ol {
-        padding-left: 20px;
-      }
-
-      @media (max-width: 600px) {
-        .download-button {
-          padding: 12px 20px;
-          font-size: 16px;
-        }
-
-        h1 {
-          font-size: 20px;
-        }
-
-        p {
-          font-size: 14px;
-        }
-
-        .steps h2 {
-          font-size: 18px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="warning-bar">
-      <span>🔁 Link sẽ được cập nhật liên tục. Nếu lỗi xảy ra, hãy quay lại trang này để tải lại.</span>
-    </div>
-    <h1>
+<body>
+	<div class="warning-bar"> <span>🔁 Link sẽ được cập nhật liên tục. Nếu lỗi xảy ra, hãy quay lại trang này để tải lại.</span> </div>
+	<h1>
       <span style="color: red;">3 Bước</span> Cài Đặt <span style="color: #009DE0;">Army 2 TK</span> Trên <span class="shiny-text">iPhone</span>
     </h1>
-    <br />
-    <button id="playBtn">▶️ Xem Video Hướng Dẫn</button>
-    <div id="videoPopup">
-      <div class="video-container">
-        <div id="closeBtn">&times;</div>
-        <div class="iframe-wrapper">
-          <iframe id="ytplayer" src="" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <div class="section-divider"></div>
-    <div class="steps">
-      <h2>Bước 1: Cài Đặt DNS <br />
+	<br />
+	<button id="playBtn">▶️ Xem Video Hướng Dẫn</button>
+	<div id="videoPopup">
+		<div class="video-container">
+			<div id="closeBtn">&times;</div>
+			<div class="iframe-wrapper">
+				<iframe id="ytplayer" src="" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+	<div class="section-divider"></div>
+	<div class="steps">
+		<h2>Bước 1: Cài Đặt DNS <br />
         <span class="h2-note blink-underline" style="color: red;">(Không Bỏ Qua Bước Này)</span>
       </h2>
-      <p>
-        <strong>Cách cài:</strong> Tải hồ sơ → Mở <span style="color: #009DE0;">Cài đặt</span> → <span style="color: #009DE0;">Đã tải về hồ sơ</span> → <span style="color: #009DE0;">Cài đặt</span>
-        <br /> (Hoặc: Cài đặt → Cài đặt chung → Quản lý VPN & thiết bị → <strong>KhoinDNS</strong> → Cài đặt)
-      </p>
-      <p style="color: red;">
-        <strong>⚠️ Phải cài DNS xong mới được chuyển sang Bước 2</strong>
-      </p>
-      <a href="https://github.com/esigncert/khoindvn/releases/download/DNS/signed_khoindvn.mobileconfig" class="download-button" rel="noopener nofollow" download>📥 Tải Hồ Sơ DNS</a>
-    </div>
-    <div class="steps">
-      <h2>Bước 2: Cài Đặt Ứng Dụng</h2>
-      <p>Chọn một trong các link bên dưới ⬇️ <br />
-        <span class="blink-underline" style="color: red;">Nếu không tải được</span>, hãy kiên nhẫn và <span class="blink-underline" style="color: #009DE0;">thử tải link khác</span>
-      </p>
-      <p>✅ <span style="color: red;">
+		<p> <strong>Cách cài:</strong> Tải hồ sơ → Mở <span style="color: #009DE0;">Cài đặt</span> → <span style="color: #009DE0;">Đã tải về hồ sơ</span> → <span style="color: #009DE0;">Cài đặt</span>
+			<br /> (Hoặc: Cài đặt → Cài đặt chung → Quản lý VPN & thiết bị → <strong>KhoinDNS</strong> → Cài đặt) </p>
+		<p style="color: red;"> <strong>⚠️ Phải cài DNS xong mới được chuyển sang Bước 2</strong> </p> <a href="https://github.com/esigncert/khoindvn/releases/download/DNS/signed_khoindvn.mobileconfig" class="download-button" rel="noopener nofollow" download>📥 Tải Hồ Sơ DNS</a> </div>
+	<div class="steps">
+		<h2>Bước 2: Cài Đặt Ứng Dụng</h2>
+		<p>Chọn một trong các link bên dưới ⬇️
+			<br /> <span class="blink-underline" style="color: red;">Nếu không tải được</span>, hãy kiên nhẫn và <span class="blink-underline" style="color: #009DE0;">thử tải link khác</span> </p>
+		<p>✅ <span style="color: red;">
           <b>Sau khi cài đặt xong, tiếp tục chuyển sang Bước 3</b>
-        </span>
-      </p>
-      <div class="button-container" id="buttonContainer">
-        <!-- China National Heavy Duty Truck Group Co., Ltd -->
-        <button id="download" class="download-button">Tải Link Chính Thức</button>
-        <!-- Guangzhou Huahan Educational & Technology Co.,Ltd -->
-        <button id="download-dp24" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- China Telecommunications Corporation -->
-        <button id="download-dp23" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- GLOBAL TAKEOFF, INC -->
-        <button id="download-dp22" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- Tianjin University of Commerce -->
-        <button id="download-dp20" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- VIETNAM JOINT STOCK COMMERCIAL BANK FOR INDUSTRY AND TRADE -->
-        <button id="download-dp18" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- TCL household Appliance Marketing Co., LTD -->
-        <button id="download-dp13" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- BMW Brilliance Automotive Ltd -->
-        <button id="download-dp19" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- CHIBA INSTITUTE OF TECHNOLOGY -->
-        <button id="download-dp9" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- VIETTEL GROUP -->
-        <button id="download-dp10" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- Beijing Esensoft Co., Ltd -->
-        <button id="download-dp17" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- NREH ESTATE INFORMATION TECHNOLOGY CO.,LTD -->
-        <button id="download-dp16" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- China Railway Eryuan Engineering Group Co., Ltd -->
-        <button id="download-dp15" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- EEO Education Ltd -->
-        <button id="download-dp11" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- Wuling Power Corporation -->
-        <button id="download-dp12" class="download-button">Tải Link Dự Phòng ...</button>
-        <!-- HDFC Bank Limited -->
-        <button id="download-dp4" class="download-button">Tải Link Dự Phòng ...</button>
-        <p id="showMoreText" style="color: red; cursor:pointer; margin:10px; display:none;" onclick="showMoreLinks()">▾ Lấy Thêm Link Tải ▾</p>
-      </div>
-    </div>
-    <div class="steps">
-      <h2>Bước 3: Xác Minh Ứng dụng</h2>
-      <p>Sau khi cài đặt xong, mở <span style="color: #009DE0;">Cài đặt</span> → <span style="color: #009DE0;">Cài đặt chung</span> → <span style="color: #009DE0;">Quản lý VPN & thiết bị</span> để xác minh ứng dụng. </p>
-      <img src="xacminh.webp" alt="Hướng dẫn xác minh ứng dụng" style="max-width: 100%; border-radius: 8px; margin-top: 15px;">
-    </div>
-    <div id="custom-popup" style="visibility:hidden; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:9999; display:flex; justify-content:center; align-items:center; opacity:0; transform:scale(0.8); transition:opacity 0.3s ease, transform 0.3s ease;">
-      <div style="background:white; padding:20px 30px; border-radius:10px; text-align:center; max-width:90%; width:300px;">
-        <h3 style="color:#e53935;">⚠️ Lưu Ý</h3>
-        <p style="margin:10px 0;">Vui lòng hoàn thành <strong>
+        </span> </p>
+		<div class="button-container" id="buttonContainer">
+			<!-- China National Heavy Duty Truck Group Co., Ltd -->
+			<button id="download" class="download-button">Tải Link Chính Thức</button>
+			<!-- Guangzhou Huahan Educational & Technology Co.,Ltd -->
+			<button id="download-dp24" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- China Telecommunications Corporation -->
+			<button id="download-dp23" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- GLOBAL TAKEOFF, INC -->
+			<button id="download-dp22" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- Tianjin University of Commerce -->
+			<button id="download-dp20" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- VIETNAM JOINT STOCK COMMERCIAL BANK FOR INDUSTRY AND TRADE -->
+			<button id="download-dp18" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- TCL household Appliance Marketing Co., LTD -->
+			<button id="download-dp13" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- BMW Brilliance Automotive Ltd -->
+			<button id="download-dp19" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- CHIBA INSTITUTE OF TECHNOLOGY -->
+			<button id="download-dp9" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- VIETTEL GROUP -->
+			<button id="download-dp10" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- Beijing Esensoft Co., Ltd -->
+			<button id="download-dp17" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- NREH ESTATE INFORMATION TECHNOLOGY CO.,LTD -->
+			<button id="download-dp16" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- China Railway Eryuan Engineering Group Co., Ltd -->
+			<button id="download-dp15" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- EEO Education Ltd -->
+			<button id="download-dp11" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- Wuling Power Corporation -->
+			<button id="download-dp12" class="download-button">Tải Link Dự Phòng ...</button>
+			<!-- HDFC Bank Limited -->
+			<button id="download-dp4" class="download-button">Tải Link Dự Phòng ...</button>
+			<p id="showMoreText" style="color: red; cursor:pointer; margin:10px; display:none;" onclick="showMoreLinks()">▾ Lấy Thêm Link Tải ▾</p>
+		</div>
+	</div>
+	<div class="steps">
+		<h2>Bước 3: Xác Minh Ứng dụng</h2>
+		<p>Sau khi cài đặt xong, mở <span style="color: #009DE0;">Cài đặt</span> → <span style="color: #009DE0;">Cài đặt chung</span> → <span style="color: #009DE0;">Quản lý VPN & thiết bị</span> để xác minh ứng dụng. </p> <img src="xacminh.webp" alt="Hướng dẫn xác minh ứng dụng" style="max-width: 100%; border-radius: 8px; margin-top: 15px;"> </div>
+	<div id="custom-popup" style="visibility:hidden; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:9999; display:flex; justify-content:center; align-items:center; opacity:0; transform:scale(0.8); transition:opacity 0.3s ease, transform 0.3s ease;">
+		<div style="background:white; padding:20px 30px; border-radius:10px; text-align:center; max-width:90%; width:300px;">
+			<h3 style="color:#e53935;">⚠️ Lưu Ý</h3>
+			<p style="margin:10px 0;">Vui lòng hoàn thành <strong>
             <span style="color: red;">Bước 1: Cài đặt hồ sơ DNS</span>
           </strong> trước khi tiếp tục. </p>
-        <p style="color: red;">( <strong>KHÔNG</strong> Cài Đặt Ứng Dụng Khi Chưa Hoàn Thành <strong>Cài Đặt DNS</strong>) </p>
-        <p style="color: #009DE0;">Điều này là bắt buộc để ứng dụng có thể hoạt động lâu dài.</p>
-        <button onclick="closePopup()" style="margin-top:15px; padding:10px 20px; background-color:#009DE0; color:white; border:none; border-radius:5px; font-size:16px;">Đã hiểu</button>
-      </div>
-    </div>
-  </body>
+			<p style="color: red;">( <strong>KHÔNG</strong> Cài Đặt Ứng Dụng Khi Chưa Hoàn Thành <strong>Cài Đặt DNS</strong>) </p>
+			<p style="color: #009DE0;">Điều này là bắt buộc để ứng dụng có thể hoạt động lâu dài.</p>
+			<button onclick="closePopup()" style="margin-top:15px; padding:10px 20px; background-color:#009DE0; color:white; border:none; border-radius:5px; font-size:16px;">Đã hiểu</button>
+		</div>
+	</div>
+</body>
+
 </html>
