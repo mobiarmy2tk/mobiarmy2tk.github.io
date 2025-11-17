@@ -165,9 +165,32 @@
       }
 
       #playBtn {
-        padding: 4px 14px;
-        font-size: 12px;
-      }
+  position: relative;
+  overflow: visible;
+}
+
+#playBtn::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  border-radius: 50%;
+  border: 2px solid rgba(0, 170, 255, 0.6);
+  animation: ringPulse 2s infinite linear;
+}
+
+@keyframes ringPulse {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.24);
+    opacity: 0;
+  }
+}
 
       #videoPopup {
         display: none;
