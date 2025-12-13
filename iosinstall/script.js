@@ -37,18 +37,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  if (buttons.length > maxVisible) {
+  if (buttons.length > maxVisible && showMoreText) {
     showMoreText.style.display = 'inline-block';
   }
 
   window.showMoreLinks = function () {
     buttons.forEach(btn => btn.style.display = 'inline-block');
-    showMoreText.style.display = 'none';
+    if (showMoreText) showMoreText.style.display = 'none';
   }
 
-  document.getElementById('download').addEventListener('click', function () {
-    window.location.href = `https://ios.army2lau.net/iosinstall/`;
-  });
+  const mainDownload = document.getElementById('download');
+  if (mainDownload) {
+    mainDownload.addEventListener('click', function () {
+      window.location.href = 'https://ios.army2lau.net/iosinstall/';
+    });
+  }
 
   for (let i = 1; i <= 50; i++) {
     const btn = document.getElementById(`download-dp${i}`);
@@ -82,4 +85,30 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+  function isIOS() {
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
+  function isInAppBrowser() {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/FBAN|FBAV|Instagram|Line|Zalo|Messenger|TikTok/i.test(ua)) {
+      return true;
+    }
+
+    if (isIOS() && !/Safari/i.test(ua)) {
+      return true;
+    }
+
+    return false;
+  }
+
+  if (isIOS() && isInAppBrowser()) {
+    const warning = document.getElementById("open-safari-warning");
+    if (warning) {
+      warning.style.display = "block";
+    }
+  }
+
 });
