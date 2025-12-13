@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function isInAppBrowser() {
     const ua = navigator.userAgent || navigator.vendor || window.opera;
 
-    if (/FBAN|FBAV|Instagram|Line|Zalo|Messenger|TikTok/i.test(ua)) {
+    if (/FBAN|FBAV|Instagram|Line|Zalo|Messenger|TikTok|Telegram|TelegramBot|Twitter|Snapchat/i.test(ua)) {
       return true;
     }
 
