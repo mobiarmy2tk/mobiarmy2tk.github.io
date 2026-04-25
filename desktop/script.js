@@ -25,19 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener('click', () => {
       btn.disabled = true;
       btn.textContent = "Đang tải...";
-
-      fetch(`download.php?file=${os}`)
-        .then(res => res.text())
-        .then(url => {
-          window.location.href = url;
-        })
-        .catch(err => {
-          console.error(err);
-          btn.textContent = "Lỗi tải!";
-          btn.disabled = false;
-        });
+      
+      try {
+        window.location.href = `https://army2lau.net/taive/download.php?file=${os}`;
+      } catch (e) {
+        btn.textContent = "Lỗi!";
+        btn.disabled = false;
+      }
     });
-
+  
   });
-
-});
