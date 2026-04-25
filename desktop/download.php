@@ -21,7 +21,7 @@ file_put_contents($counterFile, json_encode($data), LOCK_EX);
 
 $links = [
     "windows" => "https://codeberg.org/army2/Army2TK/raw/branch/main/Army2TK_setup.exe",
-    "mac" => "https://codeberg.org/army2/Army2TK/raw/branch/main/Army2TK.dmg"
+    "mac" => "https://codeberg.org/army2/Army2TK/raw/branch/main/Army2TK_setup.exe"
 ];
 
 header("Location: " . $links[$file]);
