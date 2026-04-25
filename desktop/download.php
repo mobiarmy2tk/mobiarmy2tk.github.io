@@ -23,5 +23,5 @@ $links = [
     "mac" => "https://codeberg.org/army2/Army2TK/raw/branch/main/Army2TK_setup.exe"
 ];
 
-echo $links[$file];
+header("Location: " . $links[$file]);
 exit;
