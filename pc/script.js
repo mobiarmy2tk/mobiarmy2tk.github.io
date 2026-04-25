@@ -1,33 +1,37 @@
-const containers = document.querySelectorAll('.container');
+document.addEventListener("DOMContentLoaded", () => {
 
-const links = {
-  windows: "https://codeberg.org/army2/Army2TK/raw/branch/main/Army2TK_setup.exe",
-  mac: "https://codeberg.org/army2/Army2TK/raw/branch/main/Army2TK_setup.exe"
-};
+  const containers = document.querySelectorAll('.container');
 
-containers.forEach(container => {
-  let seconds = 9;
+  const links = {
+    windows: "https://codeberg.org/army2/Army2TK/raw/branch/main/Army2TK_setup.exe",
+    mac: "https://codeberg.org/army2/Army2TK/raw/branch/main/Army2TK_setup.exe"
+  };
 
-  const countdown = container.querySelector('.countdown');
-  const btn = container.querySelector('.downloadBtn');
-  const os = container.getAttribute('data-os');
+  containers.forEach(container => {
+    let seconds = 9;
 
-  const interval = setInterval(() => {
-    if (seconds > 0) {
-      countdown.textContent = "Tập tin chuẩn bị tải xuống!";
-      btn.textContent = `Vui lòng chờ ${seconds}s`;
-      seconds--;
-    } else {
-      clearInterval(interval);
-      countdown.textContent = "Tập tin đã sẵn sàng!";
-      btn.textContent = "Tải Ngay";
-      btn.disabled = false;
-    }
-  }, 1000);
+    const countdown = container.querySelector('.countdown');
+    const btn = container.querySelector('.downloadBtn');
+    const os = container.getAttribute('data-os');
 
-  btn.addEventListener('click', () => {
-    btn.disabled = true;
-    btn.textContent = "Đang tải...";
-    window.location.href = links[os];
+    const interval = setInterval(() => {
+      if (seconds > 0) {
+        countdown.textContent = "Tập tin chuẩn bị tải xuống!";
+        btn.textContent = `Vui lòng chờ ${seconds}s`;
+        seconds--;
+      } else {
+        clearInterval(interval);
+        countdown.textContent = "Tập tin đã sẵn sàng!";
+        btn.textContent = "Tải Ngay";
+        btn.disabled = false;
+      }
+    }, 1000);
+
+    btn.addEventListener('click', () => {
+      btn.disabled = true;
+      btn.textContent = "Đang tải...";
+      window.location.href = links[os];
+    });
   });
+
 });
