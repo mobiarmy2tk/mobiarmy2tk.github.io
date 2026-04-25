@@ -12,11 +12,10 @@ if (!file_exists($counterFile)) {
 $data = json_decode(file_get_contents($counterFile), true);
 
 if (!isset($data[$file])) {
-    $data[$file] = 0;
+    die("Invalid file");
 }
 
 $data[$file]++;
-
 file_put_contents($counterFile, json_encode($data), LOCK_EX);
 
 $links = [
@@ -24,5 +23,5 @@ $links = [
     "mac" => "https://codeberg.org/army2/Army2TK/raw/branch/main/Army2TK_setup.exe"
 ];
 
-header("Location: " . $links[$file]);
+echo $links[$file];
 exit;
