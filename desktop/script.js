@@ -26,12 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.disabled = true;
       btn.textContent = "Đang tải...";
       
-      try {
-        window.location.href = `https://army2lau.net/taive/download.php?file=${os}`;
-      } catch (e) {
-        btn.textContent = "Lỗi!";
-        btn.disabled = false;
-      }
+      window.location.href = `https://army2lau.net/taive/download.php?file=${os}`;
     });
-  
+
   });
+
+});
