@@ -2,11 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const containers = document.querySelectorAll('.container');
 
-  const links = {
-    windows: "https://codeberg.org/army2/Army2TK/raw/branch/main/Army2TK_setup.exe",
-    mac: "https://codeberg.org/army2/Army2TK/raw/branch/main/Army2TK_setup.exe"
-  };
-
   containers.forEach(container => {
     let seconds = 9;
 
@@ -30,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener('click', () => {
       btn.disabled = true;
       btn.textContent = "Đang tải...";
-      window.location.href = links[os];
+      window.location.href = `download.php?file=${os}`;
     });
   });
 
