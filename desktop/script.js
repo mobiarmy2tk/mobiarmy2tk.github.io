@@ -25,8 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener('click', () => {
       btn.disabled = true;
       btn.textContent = "Đang tải...";
-      window.location.href = `download.php?file=${os}`;
+
+      fetch(`download.php?file=${os}`)
+        .then(res => res.text())
+        .then(url => {
+          window.location.href = url;
+        })
+        .catch(err => {
+          console.error(err);
+          btn.textContent = "Lỗi tải!";
+          btn.disabled = false;
+        });
     });
+
   });
 
 });
