@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const mainDownload = document.getElementById('download');
   if (mainDownload) {
     mainDownload.addEventListener('click', function () {
-      window.location.href = 'https://ios.army2lau.net/iosinstall/';
+      window.location.href = 'https://ios.army2tk.com/iosinstall/';
     });
   }
 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const btn = document.getElementById(`download-dp${i}`);
     if (btn) {
       btn.addEventListener('click', function () {
-        window.location.href = `https://ios.army2lau.net/iosinstall/dp${i}.php`;
+        window.location.href = `https://ios.army2tk.com/iosinstall/dp${i}.php`;
       });
     }
   }
