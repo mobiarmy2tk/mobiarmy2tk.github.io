@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.disabled = true;
       btn.textContent = "Đang tải...";
       
-      window.location.href = `https://army2lau.net/taive/download.php?file=${os}`;
+      window.location.href = `https://army2tk.com/taive/download.php?file=${os}`;
     });
 
   });
