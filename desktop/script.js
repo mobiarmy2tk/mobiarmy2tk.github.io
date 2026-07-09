@@ -8,6 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const countdown = container.querySelector('.countdown');
     const btn = container.querySelector('.downloadBtn');
     const os = container.getAttribute('data-os');
+    const noWait = container.getAttribute('data-no-wait') === 'true';
+
+    if (noWait) {
+      btn.disabled = false;
+      btn.addEventListener('click', () => {
+        window.location.href = "https://army2tk.com/taive/download.php?file=webgl";
+      });
+      return;
+    }
 
     const interval = setInterval(() => {
       if (seconds > 0) {
